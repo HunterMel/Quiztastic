@@ -1,0 +1,16 @@
+#my-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#another-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+}
+
+#myQuestion {
+    display: none;
+}
