@@ -1,3 +1,3 @@
 # Quiztastic
 
-![](Images/highscorephoto.png)
+![](images/highscorephoto.png)
