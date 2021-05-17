@@ -1,7 +1,6 @@
 const myStartButton = document.getElementById('start-button');
 const mainContainer = document.getElementById('main');
 const buttonContainer = $('.answer-button');
-
 const anotherContainer = document.getElementById('another-container');
 const myQuestion = document.getElementById('myQuestion');
 let chosenAnswer = []
@@ -14,32 +13,32 @@ function myFunction() {
     $('#answer-1').text(questions[0].answers[1])
     $('#answer-2').text(questions[0].answers[2])
     $('#answer-3').text(questions[0].answers[3])
+    const timer = ms => new Promise(res => setTimeout(res, ms))
+
+    mainContainer.addEventListener('click', (event) => {
+        const loopFunction = async _ => {
+            for (let i = 1; i < 4; i++) {
+                if (event.target.id.startsWith('answer')) {
+                    chosenAnswer.push(event.target.id.split('-')[1])
+
+                    $('#question').text(questions[i].question)
+                    $('#answer-0').text(questions[i].answers[0])
+                    $('#answer-1').text(questions[i].answers[1])
+                    $('#answer-2').text(questions[i].answers[2])
+                    $('#answer-3').text(questions[i].answers[3])
+                    await timer(10000)
+                }
+
+            }
+
+        }
+
+    })
 }
 
 // const firstQuestion = (e) => {
 //     chosenAnswer1 = e.target.id.value
 // }
-const timer = ms => new Promise(res => setTimeout(res, ms))
-
-mainContainer.addEventListener('click', (event) => {
-    const loopFunction = async _ => {
-        for (let i = 1; i < 4; i++) {
-            if (event.target.id.startsWith('answer')) {
-                chosenAnswer.push(event.target.id.split('-')[1])
-
-                $('#question').text(questions[i].question)
-                $('#answer-0').text(questions[i].answers[0])
-                $('#answer-1').text(questions[i].answers[1])
-                $('#answer-2').text(questions[i].answers[2])
-                $('#answer-3').text(questions[i].answers[3])
-                await timer(60000)
-            }
-
-        }
-
-    }
-
-})
 
 
 myStartButton.onclick = myFunction;
@@ -79,4 +78,6 @@ var questions = [
     }
 
 ]
+
+
 

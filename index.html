@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiztastic:Javascipt</title>
+    <title>Quiztastic</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="./style.css">
 
 <body id='main'>
 
     <div id="my-container">
-        <h2>View high scores</h2>
-        <h3>Time: 0</h3>
+        <h6>View high scores</h6>
+        <h6>Time: 0</h6>
+
     </div>
 
     <div id="another-container">
@@ -23,22 +25,25 @@
         <button id="start-button">Start Quiz</button>
     </div>
 
-    <div id="myQuestion">
-        <h3 id='question'></h3>
-        <button id='answer-0' class='answer-button'></button>
-        <button id='answer-1' class='answer-button'></button>
-        <button id='answer-2' class='answer-button'></button>
-        <button id='answer-3' class='answer-button'></button>
-    </div>
+    <div class=“hide-div” id=“end-screen”>
+        <h2>Game Over check out your score</h2>
+        <h2 id=“score”></h2>
+        <h3>Enter Initials for high score
+            <input type=“text” id=“score-entry” />
+            <button id=“save-score”>Save</button>
+        </h3>
+
+        <div id="myQuestion">
+            <h3 id='question'></h3>
+            <button id='answer-0' class='answer-button'></button>
+            <button id='answer-1' class='answer-button'></button>
+            <button id='answer-2' class='answer-button'></button>
+            <button id='answer-3' class='answer-button'></button>
+        </div>
 
 
 
 
-
-
-
-    <!-- <div class="container">
-        <h1 id="h1-text">Lets Get Started!</h1>
     </div>
 
 
@@ -47,7 +52,7 @@
     <div id="results"></div> -->
 
 
-    <script src="script.js"></script>
+
 </body>
 
 </html>
